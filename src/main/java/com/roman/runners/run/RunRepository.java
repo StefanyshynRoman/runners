@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Repository
 public class RunRepository {
     private List<Run> runs = new ArrayList<>();
@@ -29,5 +31,9 @@ public class RunRepository {
                 LocalDateTime.now().plus(60, ChronoUnit.MINUTES),
                 6,
                 Location.INDOOR));
+    }
+
+    Optional<Run> findById(Integer id) {
+        return runs.stream().filter(run -> run.id()==id).findFirst();
     }
 }
