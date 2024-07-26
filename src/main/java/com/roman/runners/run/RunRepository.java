@@ -32,4 +32,12 @@ public class RunRepository {
                 .params(List.of(run.id(),run.title(),run.startedOn(),run.completedOn(),run.miles(),run.location().toString()))
                 .update();
     }
+
+    public int count() {
+        return jdbcClient.sql("select * from run").query().listOfRows().size();
+    }
+
+    public void saveAll(List<Run> runs) {
+        runs.stream().forEach(this::create);
+    }
 }
