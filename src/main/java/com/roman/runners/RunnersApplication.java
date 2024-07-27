@@ -1,17 +1,9 @@
 package com.roman.runners;
 
-import com.roman.runners.run.Location;
-import com.roman.runners.run.Run;
-import com.roman.runners.run.RunRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.boot.CommandLineRunner;
-
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 
 @SpringBootApplication
 public class RunnersApplication {
